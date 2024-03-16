@@ -11,4 +11,15 @@ module.exports = function (router) {
 		jsonParser,
 		motherController.addMother
 	);
+
+	router.post('/login',
+		jsonParser,
+		motherController.login
+	);
+
+	router.post('/initial_exercises',
+		jsonParser,
+		motherController.addInitialExercises
+	);
+
 };
