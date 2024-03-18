@@ -15,7 +15,6 @@ module.exports = function (router) {
 	var bodyParser = require('body-parser');
 	var jsonParser = bodyParser.json();
 
-	//router controllers 
 	const questionnaireEnglishController = require('../../controllers/quiz/questionnaireEnglishController');
 	const validationsMiddleware = require('../../validators/commonValidatorsjoi');
 

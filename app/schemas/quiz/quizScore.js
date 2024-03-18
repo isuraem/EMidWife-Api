@@ -13,4 +13,5 @@ const quizScoreSchema = new mongoose.Schema({
   family_background_normal: Number,
 });
 
+
 module.exports = mongoose.model('quizScore', quizScoreSchema);

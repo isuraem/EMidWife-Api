@@ -7,7 +7,6 @@ const {
 	ResponseCommonMessages,
 } = require("../../util/constants/responseCommonMessages");
 
-// Implement controller functions here
 module.exports.addQuizDetailsController = async (req, res) => {
 	try {
 		const quizDetailsResponse =

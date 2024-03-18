@@ -26,6 +26,7 @@ module.exports.addQuizScoreDetailsService = async (req, res) => {
 	}
 };
 
+
 module.exports.viewAllQuizScoreDetailsService = async (req, res) => {
 	try {
 		let response = await quizScore.find();

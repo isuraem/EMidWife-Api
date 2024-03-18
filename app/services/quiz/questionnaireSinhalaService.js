@@ -1,7 +1,6 @@
 // services/questionnaireService.js
 const Questionnaire = require("../../schemas/quiz/questionnaireSinhala");
 
-// Implement service functions here
 module.exports.addQuestionnaireService = async (req, res) => {
 	try {
 		const { question, answers, scores } = req; // Assuming the data is in the request body

@@ -7,4 +7,5 @@ const questionnaireSchema = new mongoose.Schema({
   scores: [Number],
 });
 
+
 module.exports = mongoose.model('QuestionnaireInEnglish', questionnaireSchema);

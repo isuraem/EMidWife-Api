@@ -15,5 +15,4 @@ module.exports = function (router) {
 		jsonParser,
 		quizDetailsController.viewQuizDetailsController,
 	);
-	// Define your routes
 };

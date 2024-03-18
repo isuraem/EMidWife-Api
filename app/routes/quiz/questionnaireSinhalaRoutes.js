@@ -15,5 +15,4 @@ module.exports = function (router) {
 		jsonParser,
 		questionnaireSinhalaController.viewQuestionnaireController,
 	);
-	// Define your routes
 };
