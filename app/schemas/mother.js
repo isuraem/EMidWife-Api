@@ -31,9 +31,15 @@ var MotherSchema = new Schema({
     is_daily_works_active:{
         type: Boolean
     },
+    risk_level:{
+        type: String
+    },
+    risk_level_status:{
+        type: Number  // 0 -> low , 10 -> medium , 20 -> high 
+    },
     state: {
         type: Number,
-        default: 0// 0 -> active
+        default: 0 // 0 -> active
     }
 
 

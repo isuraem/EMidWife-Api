@@ -21,7 +21,10 @@ module.exports.addExercise = async (requestBody) => {
 		exercise_type,
 		duration,
 		waiting_time,
-		special_notes
+		special_notes,
+		description,
+		steps,
+		risk_Level
 	} = requestBody;
 
 	try {
@@ -36,6 +39,9 @@ module.exports.addExercise = async (requestBody) => {
 			exercise_type: exercise_type,
 			duration: duration,
 			waiting_time: waiting_time,
+			description: description,
+			exer_steps: steps,
+			risk_Level: risk_Level
 		}
 		//create new user obj
 		let newExercise = new Exercise(newExerObj);
