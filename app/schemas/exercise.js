@@ -30,8 +30,12 @@ var ExerciseSchema = new Schema({
         type: Number
     },
     exercise_level: {
-        type : Number // 10 -> only first trimester , 20 -> only second tri mester , 30 -> only third trimester, 40  -> 1st and second, 50 -> 2nd and 3rd
+        type : Number // 10 -> only first trimester , 20 -> only second trimester , 30 -> only third trimester, 40  -> 1st and second, 50 -> 2nd and 3rd
                       //60 -> 3rd and 1st , 70 -> all
+    },
+    risk_Level:{
+        type : Number // 10 -> low , 20 -> medium , 30 -> high, 40  -> low and medium, 50 -> medium and high
+        //60 -> high and low , 70 -> all
     },
     exercise_type: {
         type: Number // 0 -> normal, 10 -> strength
@@ -39,6 +43,16 @@ var ExerciseSchema = new Schema({
     duration: {
         type: Number
     },
+    description:{
+        type: String
+    },
+    exer_steps:[
+        {
+            step : {
+                type: String
+            }
+        },
+    ],
     waiting_time : {
         type: Number
     },

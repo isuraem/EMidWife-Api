@@ -9,6 +9,9 @@ var WeekSchema = new Schema({
     },
     end_date:{
         type: String
+    },
+    started_date_num:{
+        type: Number
     }
 }, {
 	timestamps: {

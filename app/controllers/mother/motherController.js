@@ -13,3 +13,22 @@ module.exports.addMother = async (req, res) => {
 	}
 };
 
+module.exports.login = async (req, res) => {
+	try {
+		const serviceResponse = await motherService.login(req.body);
+		return res.status(200).json({ success: true, msg: serviceResponse.msg , data:serviceResponse.data, showMessage:false });
+	} catch (err) {
+		Logger.log('login', null, null,err);
+		return res.status(err.status || ResponseStatusCodes.INTERNAL_SERVER_ERROR).json({ success: false, msg: err.msg || ResponseCommonMessages.INTERNAL_SERVER_ERROR });
+	}
+};
+
+module.exports.addInitialExercises = async (req, res) => {
+	try {
+		const serviceResponse = await motherService.addInitialExercises(req.body);
+		return res.status(200).json({ success: true, msg: serviceResponse.msg , data:serviceResponse.data, showMessage:false });
+	} catch (err) {
+		Logger.log('addWeeklyExercises', null, null,err);
+		return res.status(err.status || ResponseStatusCodes.INTERNAL_SERVER_ERROR).json({ success: false, msg: err.msg || ResponseCommonMessages.INTERNAL_SERVER_ERROR });
+	}
+};

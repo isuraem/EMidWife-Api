@@ -112,7 +112,7 @@ var WeekExerciseSessionSchema = new Schema({
     },
     state: {
         type: Number,
-        default: 0 // 0 -> active, -10 -> disable
+        default: 0 // 10 -> active, -10 -> disable
     }
 
 }, {
