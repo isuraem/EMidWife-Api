@@ -19,7 +19,7 @@ module.exports.createWeek = async (requestBody) => {
         if(fetchDate){
             let dayOfWeek = moment(fetchDate).format('dddd');
             if(dayOfWeek === "Monday"){
-                weekStartDate = moment(fetchDate).subtract(6, 'days').format();
+                weekStartDate = moment(fetchDate).format();
                 started_date_num = 1;
                 end_date = moment(fetchDate).add(6, 'days').format();
                 console.log("data", weekStartDate, started_date_num, end_date)

@@ -26,7 +26,7 @@ var MotherSchema = new Schema({
     },
     is_exercises_active: {
         type: Boolean,
-        default: true
+        default: false
     },
     is_daily_works_active:{
         type: Boolean
@@ -41,7 +41,6 @@ var MotherSchema = new Schema({
         type: Number,
         default: 0 // 0 -> active
     }
-
 
 }, {
 	timestamps: {

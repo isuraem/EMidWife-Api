@@ -22,4 +22,9 @@ module.exports = function (router) {
 		motherController.addInitialExercises
 	);
 
+	router.post('/get_all_exercise_day',
+		jsonParser,
+		motherController.getAllExerciseDay
+	);
+
 };
