@@ -40,7 +40,7 @@ app.use("/api", appController);
 // use routes (if applicable) appController
 app.use("/api/check", (req, res) => {
 	return res.status(200).json({
-		message: "This is checking port"
+		message: "This is new checking port"
 	})
 });
 
