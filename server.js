@@ -14,7 +14,7 @@ require("dotenv").config({
 });
 
 // Constants
-const PORT = process.env.PORT || 8070;
+const PORT = 8070;
 const URL = process.env.MONGODB_URL;
 
 // Middleware
