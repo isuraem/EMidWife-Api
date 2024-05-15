@@ -43,7 +43,7 @@ module.exports.addExercise = async (requestBody) => {
 			exer_steps: steps,
 			risk_Level: risk_Level
 		}
-		//create new user obj
+		//create new user
 		let newExercise = new Exercise(newExerObj);
 		newExercise.$session(session);
 		await newExercise.save();
