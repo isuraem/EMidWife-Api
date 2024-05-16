@@ -27,4 +27,9 @@ module.exports = function (router) {
 		motherController.getAllExerciseDay
 	);
 
+	router.post('/update_device_status',
+		jsonParser,
+		motherController.updateWearbleDeviceStatus
+	);
+
 };

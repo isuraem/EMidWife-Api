@@ -362,3 +362,39 @@ module.exports.getAllExerciseDay = async (requestBody) => {
 		session.endSession();
 	}
 };
+
+
+module.exports.updateWearbleDeviceStatus = async (requestBody) => {
+
+	//initiate session
+	const session = await mongoose.startSession();
+	//start the transaction
+	session.startTransaction();
+
+	try {
+
+		//create new user obj
+		let motherObj = await Mother.findById(requestBody._id);
+
+		if (!motherObj) {
+			throw new BadRequestException('Mother data not received.');
+		}
+		let deviceStatus = requestBody.deviceStatus;
+		motherObj.is_wearble_device = deviceStatus;
+		motherObj.$session(session);
+		await motherObj.save();
+
+		await session.commitTransaction();
+		
+		return {
+			msg: 'Successfully joined.',
+			data: motherObj
+		};
+
+	} catch (err) {
+		await session.abortTransaction();
+		throw err;
+	} finally {
+		session.endSession();
+	}
+};
