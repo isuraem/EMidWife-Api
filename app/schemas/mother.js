@@ -28,6 +28,10 @@ var MotherSchema = new Schema({
         type: Boolean,
         default: false
     },
+    is_wearble_device: {
+        type: Boolean,
+        default: false
+    },
     is_daily_works_active:{
         type: Boolean
     },
