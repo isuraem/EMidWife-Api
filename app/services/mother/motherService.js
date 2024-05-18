@@ -93,6 +93,24 @@ module.exports.login = async (requestBody) => {
 	}
 };
 
+module.exports.getUserDetails = async (email) => {
+    try {
+        const mother = await Mother.findOne({ email: email }).exec();
+        if (!mother) {
+            throw new Error('No user found with the given email.');
+        }
+        return {
+            msg: 'User details retrieved successfully.',
+            data: mother
+        };
+    } catch (err) {
+        throw {
+            msg: err.message,
+            status: 404 // Not Found, but you can adjust the status code based on your needs
+        };
+    }
+};
+
 module.exports.addInitialExercises = async (requestBody) => {
 
 	//initiate session

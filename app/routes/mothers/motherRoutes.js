@@ -17,6 +17,11 @@ module.exports = function (router) {
 		motherController.login
 	);
 
+	router.get('/user-details',
+		jsonParser,
+		motherController.getUserDetails
+	);
+
 	router.post('/initial_exercises',
 		jsonParser,
 		motherController.addInitialExercises
