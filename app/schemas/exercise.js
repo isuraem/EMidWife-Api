@@ -26,6 +26,9 @@ var ExerciseSchema = new Schema({
     is_wearble:{
         type: Boolean
     },
+    is_camera_active: {
+        type: Boolean
+    },
     exer_no:{
         type: Number
     },
