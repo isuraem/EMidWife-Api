@@ -45,7 +45,7 @@ module.exports.addExercise = async (requestBody) => {
 			risk_Level: risk_Level,
 			is_camera_active: is_camera_active
 		}
-		//create new user obj
+		//create new user
 		let newExercise = new Exercise(newExerObj);
 		newExercise.$session(session);
 		await newExercise.save();

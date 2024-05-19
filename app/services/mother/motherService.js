@@ -93,6 +93,24 @@ module.exports.login = async (requestBody) => {
 	}
 };
 
+module.exports.getUserDetails = async (email) => {
+    try {
+        const mother = await Mother.findOne({ email: email }).exec();
+        if (!mother) {
+            throw new Error('No user found with the given email.');
+        }
+        return {
+            msg: 'User details retrieved successfully.',
+            data: mother
+        };
+    } catch (err) {
+        throw {
+            msg: err.message,
+            status: 404 // Not Found, but you can adjust the status code based on your needs
+        };
+    }
+};
+
 module.exports.addInitialExercises = async (requestBody) => {
 
 	//initiate session
@@ -353,6 +371,42 @@ module.exports.getAllExerciseDay = async (requestBody) => {
 		return {
 			msg: 'Successfully joined.',
 			data: exerciseDataArray
+		};
+
+	} catch (err) {
+		await session.abortTransaction();
+		throw err;
+	} finally {
+		session.endSession();
+	}
+};
+
+
+module.exports.updateWearbleDeviceStatus = async (requestBody) => {
+
+	//initiate session
+	const session = await mongoose.startSession();
+	//start the transaction
+	session.startTransaction();
+
+	try {
+
+		//create new user obj
+		let motherObj = await Mother.findById(requestBody._id);
+
+		if (!motherObj) {
+			throw new BadRequestException('Mother data not received.');
+		}
+		let deviceStatus = requestBody.deviceStatus;
+		motherObj.is_wearble_device = deviceStatus;
+		motherObj.$session(session);
+		await motherObj.save();
+
+		await session.commitTransaction();
+		
+		return {
+			msg: 'Successfully joined.',
+			data: motherObj
 		};
 
 	} catch (err) {

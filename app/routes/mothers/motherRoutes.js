@@ -17,6 +17,11 @@ module.exports = function (router) {
 		motherController.login
 	);
 
+	router.post('/user-details',
+		jsonParser,
+		motherController.getUserDetails
+	);
+
 	router.post('/initial_exercises',
 		jsonParser,
 		motherController.addInitialExercises
@@ -25,6 +30,11 @@ module.exports = function (router) {
 	router.post('/get_all_exercise_day',
 		jsonParser,
 		motherController.getAllExerciseDay
+	);
+
+	router.post('/update_device_status',
+		jsonParser,
+		motherController.updateWearbleDeviceStatus
 	);
 
 };
