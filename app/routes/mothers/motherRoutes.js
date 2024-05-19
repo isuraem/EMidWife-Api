@@ -17,7 +17,7 @@ module.exports = function (router) {
 		motherController.login
 	);
 
-	router.get('/user-details',
+	router.post('/user-details',
 		jsonParser,
 		motherController.getUserDetails
 	);
