@@ -21,43 +21,43 @@ module.exports.createWeek = async (requestBody) => {
             if(dayOfWeek === "Monday"){
                 weekStartDate = moment(fetchDate).format();
                 started_date_num = 1;
-                end_date = moment(fetchDate).add(6, 'days').format();
+                end_date = moment(fetchDate).add(6, 'days').endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
             if(dayOfWeek === "Tuesday"){
                 weekStartDate = moment(fetchDate).subtract(1, 'days').format();
                 started_date_num = 2;
-                end_date = moment(fetchDate).add(5, 'days').format();
+                end_date = moment(fetchDate).add(5, 'days').endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
             if(dayOfWeek === "Wednesday"){
                 weekStartDate = moment(fetchDate).subtract(2, 'days').format();
                 started_date_num = 3;
-                end_date = moment(fetchDate).add(4, 'days').format();
+                end_date = moment(fetchDate).add(4, 'days').endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
             if(dayOfWeek === "Thursday"){
                 weekStartDate = moment(fetchDate).subtract(3, 'days').format();
                 started_date_num = 4;
-                end_date = moment(fetchDate).add(3, 'days').format();
+                end_date = moment(fetchDate).add(3, 'days').endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
             if(dayOfWeek === "Friday"){
                 weekStartDate = moment(fetchDate).subtract(4, 'days').format();
                 started_date_num = 5;
-                end_date = moment(fetchDate).add(2, 'days').format();
+                end_date = moment(fetchDate).add(2, 'days').endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
             if(dayOfWeek === "Saturday"){
                 weekStartDate = moment(fetchDate).subtract(5, 'days').format();
                 started_date_num = 6;
-                end_date = moment(fetchDate).add(1, 'days').format();
+                end_date = moment(fetchDate).add(1, 'days').endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
             if(dayOfWeek === "Sunday"){
                 weekStartDate = moment(fetchDate).subtract(6, 'days').format();
                 started_date_num = 7;
-                end_date = moment(fetchDate).format();
+                end_date = moment(fetchDate).endOf('day').format();
                 console.log("data", weekStartDate, started_date_num, end_date)
             }
 
